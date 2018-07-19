@@ -8,9 +8,8 @@ class Student < InteractiveRecord
   end
 
   def self.find_by_name(name)
-    sql = "SELECT * FROM ? WHERE name = ?"
-    x = self.table_name
-    DB[:conn].execute(sql,x,name)
+    sql = "SELECT * FROM #{self.table_name} WHERE name = ?"
+    DB[:conn].execute(sql,name)
   end
 
 
