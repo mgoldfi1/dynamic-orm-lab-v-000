@@ -29,7 +29,6 @@ end
 
   self.column_names.each do |col|
     attr_accessor col.to_sym
-    binding.pry
   end
 
 
