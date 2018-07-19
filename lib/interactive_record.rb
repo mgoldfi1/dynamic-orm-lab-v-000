@@ -50,6 +50,7 @@ class InteractiveRecord
   end
 
   def self.find_by_name(name)
+    binding.pry
     sql = <<-SQL
     SELECT * FROM #{self.table_name} WHERE name = #{name}
     SQL
