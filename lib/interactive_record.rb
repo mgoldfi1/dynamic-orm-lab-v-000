@@ -22,6 +22,10 @@ class InteractiveRecord
     attributes.each {|k,v| self.send(("#{k}="), v)}
   end
 
+  self.column_names.each do |col|
+    attr_accessor col.to_sym
+  end
+
 
 
 
