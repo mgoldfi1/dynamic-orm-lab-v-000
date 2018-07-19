@@ -52,7 +52,7 @@ class InteractiveRecord
   def self.find_by(attribute)
     # binding.pry
     sql = <<-SQL
-    SELECT * FROM #{self.table_name} WHERE #{attribute.keys[0]} = #{attribute[attribute.keys[0]]}
+    SELECT * FROM #{self.table_name} WHERE #{attribute.keys[0]} = "#{attribute[attribute.keys[0]]}"
     SQL
     DB[:conn].execute(sql)
     end
