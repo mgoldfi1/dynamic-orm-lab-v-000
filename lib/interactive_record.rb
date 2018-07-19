@@ -17,6 +17,7 @@ class InteractiveRecord
     table_info.each {|col| columns << col['name']}
     columns.compact
   end
+  binding.pry
 
   def initialize(attributes={})
     attributes.each {|k,v| self.send(("#{k}="), v)}
