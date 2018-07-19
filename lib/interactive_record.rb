@@ -40,6 +40,14 @@ class InteractiveRecord
     values.join(", ")
   end
 
+  def save
+    sql = <<-SQL
+    INSERT INTO #{table_name}
+    VALUES ("#{values_for_insert}")
+    SQL
+    DB[:conn].execute(sql)
+    @id = DB[:conn].execute("SELECT last_insert_rowid() FROM #{table_name}")
+  end
 
 
 
